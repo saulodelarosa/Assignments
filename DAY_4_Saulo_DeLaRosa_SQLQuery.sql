@@ -93,4 +93,11 @@ EXEC sp_birthday_employees_DELAROSA
 --UNION ALL
 --TABLE test_table_b EXCEPT TABLE test_table_a
 --If they are different it will return records that are in one table but not the other.
-
+--Another way of writing it is as follows:
+--(SELECT * FROM table_A
+--EXCEPT
+--SELECT * FROM table_B)
+--UNION
+--(SELECT * FROM table_B
+--EXCEPT
+--SELECT * FROM table_A)
