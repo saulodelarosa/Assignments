@@ -36,10 +36,61 @@ EXEC sp_product_order_city_De_La_Rosa @product_name = 'Chai'
 
 --4.
 CREATE TABLE people_delarosa(
-
+	ID int,
+	City text
 )
+INSERT INTO people_delarosa
+VALUES (1, 'Seattle')
+
+INSERT INTO people_delarosa
+VALUES (2, 'Green Bay')
 
 CREATE TABLE city_delarosa(
-
+	id int,
+	Name text,
+	City int
 )
+
+INSERT INTO city_delarosa
+VALUES (1, ' Aaron Rodgers', 2)
+
+INSERT INTO city_delarosa
+VALUES (2, 'Russell Wilson', 1)
+
+INSERT INTO city_delarosa
+VALUES (3, 'Jody Nelson', 2)
+
+UPDATE people_delarosa
+SET City = 'Madison'
+WHERE id = 1
+
+CREATE VIEW [Packers_DELAROSA] AS 
+SELECT Name
+FROM city_delarosa
+WHERE City = 2
+
+DROP TABLE people_delarosa
+DROP TABLE city_delarosa
+DROP VIEW Packers_DELAROSA
+
+
+--5.
+CREATE PROCEDURE sp_birthday_employees_DELAROSA
+AS
+BEGIN
+	SELECT FirstName, LastName , BirthDate
+	INTO birthday_employees_DELAROSA
+		FROM EMPLOYEES
+		WHERE MONTH(BirthDate) = 2
+END
+
+EXEC sp_birthday_employees_DELAROSA
+
+--6.
+--One way to check if two tables of the same structure have identical 
+--contenct is to use the EXCEPT operator along side UNION ALL. 
+--TABLE test_table_a EXCEPT TABLE test_table_b
+--UNION ALL
+--TABLE test_table_b EXCEPT TABLE test_table_a
+--If they are different it will return records that are in one table but not the other.
 
