@@ -416,3 +416,40 @@ string sen2 = "The quick brown fox jumps over the lazy dog /Yes! Really!!!/.";
 
 reverseSentence(sen1);
 reverseSentence(sen2);
+
+static bool IsPalyndrome(string possiblePalydrome)
+{
+    int lengthOfWord = possiblePalydrome.Length;
+    if (lengthOfWord == 1)
+    {
+        return true;
+    }
+    for (int i = 0; i < lengthOfWord / 2; i++)
+    {
+        if (possiblePalydrome[i] != possiblePalydrome[lengthOfWord - i - 1])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+static void printPalyndromes(string sent)
+{
+    Console.WriteLine("Original:");
+    Console.WriteLine(sent);
+    string[] splitWords = sent.Split(' ');
+    Console.WriteLine("Palydromes:");
+    for (int i = 0; i < splitWords.Length; i++ )
+    {
+        if(IsPalyndrome(splitWords[i]))
+        {
+            Console.Write(splitWords[i] + ", ");
+        }
+    }
+    Console.WriteLine();
+    Console.WriteLine();
+
+}
+
+printPalyndromes("Hi,exe ABBA Hog fully a string: ExE Bob");
