@@ -300,4 +300,50 @@ int arrayCopy()
     return 0;
 }
 
-int a = arrayCopy();
+int u = arrayCopy();
+
+static int[] FindPrimesInRange(int startNum, int endNum)
+{
+    int u = 0;
+    int[] primes = new int[endNum - startNum];
+    Console.WriteLine("FindPrimesInRange: ");
+    bool isItPrime = true;
+    for (int n = startNum; n <= endNum; n++)
+    {
+
+        if (n == 1)
+        {
+            continue;
+        }
+
+        if (n == 0)
+        {
+            continue;
+        }
+
+
+        isItPrime = true;
+
+        for (int f = 2; f <= n / 2; ++f)
+        {
+            if (n % f == 0)
+            {
+                isItPrime = false;
+                break;
+            }
+        }
+
+        if (isItPrime)
+        {
+            Console.Write(n + " ");
+            primes[u] = n;
+            u++;
+        }
+            
+    }
+    return primes;
+    Console.WriteLine();
+    Console.WriteLine();
+}
+
+int[] foundPrimes = FindPrimesInRange(0, 24);
