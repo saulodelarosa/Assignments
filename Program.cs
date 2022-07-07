@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 /* 1.--------------------------------------------------------
  * What type would you choose for the following “numbers”?
@@ -152,21 +152,26 @@ int guessNumber()
     if (guess < 1 || guess > 3)
     {
         Console.WriteLine("Your guess is out of range.");
+        Console.WriteLine();
         return 0;
     }
 
     if(guess > rand)
     {
         Console.WriteLine("Your guess is too high.");
+        Console.WriteLine();
         return 0;
     }
     if (guess < rand)
     {
         Console.WriteLine("Your guess is too low.");
+        Console.WriteLine();
         return 0;
     }
 
-    Console.WriteLine("Your guess is too correct");
+    Console.WriteLine("Your guess is correct");
+    Console.WriteLine();
+
     return 0;
 
 
@@ -176,14 +181,61 @@ int y = guessNumber();
 
 int printPyramid()
 {
-    
     Console.WriteLine("Enter size of pyramid: ");
     int size = Convert.ToInt32(Console.ReadLine());
     for (int i = 1; i <= size; ++i)
     {
-        int y = 0;
-        int x = 0;
+        int c = 0;
+        for (int tab = 1; tab <= size - i; ++tab)
+        {
+            Console.Write(" ");
+        }
+        for (int v = c; v != (2*i - 1); v++)
+        {
+            Console.Write("*");
+            ++c;
+        }
+        Console.WriteLine();
+
+    }
+
+    Console.WriteLine();
+    Console.WriteLine();
+    return 0;
+    
+}
+
+int p = printPyramid();
+
+
+int greetingTime(){
+    var date = DateTime.Now;
+    var time = date.TimeOfDay;
+
+
+    if(date.Hour >= 5 && date.Hour < 12)
+    {
+        Console.WriteLine("Good Morning");
+    }
+
+    if (date.Hour >= 12 && date.Hour < 15)
+    {
+        Console.WriteLine("Good Afternoon");
+    }
+
+    if (date.Hour >= 15 && date.Hour < 18)
+    {
+        Console.WriteLine("Good Evening");
+    }
+
+    if (date.Hour >= 18 && date.Hour < 24)
+    {
+        Console.WriteLine("Good Evening");
     }
 
     return 0;
+
 }
+
+int g = greetingTime();
+
