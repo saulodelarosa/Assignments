@@ -341,9 +341,57 @@ static int[] FindPrimesInRange(int startNum, int endNum)
         }
             
     }
+    Console.WriteLine();
+    Console.WriteLine();
     return primes;
+}
+
+int[] foundPrimes = FindPrimesInRange(0, 24);
+
+static void repeatingElements(int[] sequence)
+{
+    Console.WriteLine("List of repeating elements:");
+    int repeatedInt = sequence[0];
+    int sequenceLength = 1;
+    int repeats = 1;
+    
+
+    for (int i = 1; i < sequence.Length; i++)
+    {
+        if (sequence[i] != sequence[i - 1])
+        {
+            repeats = 0;
+        }
+
+        repeats++;
+        if (repeats > sequenceLength)
+        {
+            sequenceLength = repeats;
+            repeatedInt = sequence[i];
+        }
+    }
+
+    for (int h = 0; h < sequenceLength; h++)
+    {
+        Console.Write(repeatedInt + " ");
+    }
+
     Console.WriteLine();
     Console.WriteLine();
 }
 
-int[] foundPrimes = FindPrimesInRange(0, 24);
+int[] num = new int[] { 2, 1, 1, 2, 3, 3, 2, 2, 2, 1 };
+
+repeatingElements(num);
+
+int[] num2 = new int[] { 1, 1, 1, 2, 3, 1, 3, 3 };
+
+repeatingElements(num2);
+
+int[] num3 = new int[] { 4, 4, 4, 4 };
+
+repeatingElements(num3);
+
+int[] num4 = new int[] { 0, 1, 1, 5, 2, 2, 6, 3, 3 };
+
+repeatingElements(num4);
