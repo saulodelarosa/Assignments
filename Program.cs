@@ -89,7 +89,7 @@ int centuries()
     Console.WriteLine("milliseconds: " + milliseconds + ", ");
     Console.WriteLine("microseconds: " + microseconds + " ");
     Console.WriteLine();
-
+    Console.WriteLine();
 
     return 0;
 }
@@ -143,6 +143,7 @@ for (int i = 1; i < max; i++)
     }
 }
 Console.WriteLine(" ");
+Console.WriteLine();
 
 int guessNumber()
 {
@@ -232,7 +233,7 @@ int greetingTime(){
     {
         Console.WriteLine("Good Evening");
     }
-
+    Console.WriteLine();
     return 0;
 
 }
@@ -395,3 +396,23 @@ repeatingElements(num3);
 int[] num4 = new int[] { 0, 1, 1, 5, 2, 2, 6, 3, 3 };
 
 repeatingElements(num4);
+
+static void reverseSentence(string sen)
+{
+    Console.WriteLine("Original: ");
+    Console.WriteLine(sen);
+    string reversedSen;
+    string[] splitWords = sen.Split(' ');
+    Array.Reverse(splitWords);
+    reversedSen = String.Join(" ", splitWords);
+    Console.WriteLine("Reversed: ");
+    Console.WriteLine(reversedSen);
+    Console.WriteLine();
+}
+
+string sen1 = "C# is not C++, and PHP is not Delphi!";
+
+string sen2 = "The quick brown fox jumps over the lazy dog /Yes! Really!!!/.";
+
+reverseSentence(sen1);
+reverseSentence(sen2);
