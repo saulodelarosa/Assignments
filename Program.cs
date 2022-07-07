@@ -239,3 +239,65 @@ int greetingTime(){
 
 int g = greetingTime();
 
+int counting()
+{
+    for (int i = 1; i <= 4; i++){
+        for (int x = 0; x <= 24; x+=i)
+        {
+            Console.Write(x + " "); ;
+        }
+        Console.WriteLine();
+    }
+
+    Console.WriteLine();
+    Console.WriteLine();
+
+    return 0;
+}
+
+int c = counting();
+
+
+//  ARRAYS AND STRINGS
+
+/*
+ * 1. You use stringBuilder in C# when you want to be able to modify a string 
+ *      and regular strings for everything else.
+ * 2. The base class for all arrays in C# is Collections
+ * 3. The simplest way to sort an array in C# is to call the Sort() method.
+ * 4. Use the .Length propery to get the length of an array.
+ * 5. No multiple types can not be stored in the same array.
+ * 6. The CopyYo() method copies the data of the original array into a different array
+ *      that already exists. Clone() creates a brand new array with the data of the original array
+ */
+
+int arrayCopy()
+{
+
+    int[] original = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    int[] copy = new int[original.Length];
+
+    for(int i = 0; i< 10; i++)
+    {
+        copy[i] = original[i];
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        Console.Write(original[i] + " ");
+    }
+
+    Console.WriteLine();
+
+    for (int i = 0; i < 10; i++)
+    {
+        Console.Write(copy[i] + " ");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine();
+
+    return 0;
+}
+
+int a = arrayCopy();
